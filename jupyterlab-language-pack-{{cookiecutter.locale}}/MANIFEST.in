@@ -1,0 +1,2 @@
+include *.txt
+recursive-include jupyterlab_language_pack_{{ cookiecutter.locale }} *.json
