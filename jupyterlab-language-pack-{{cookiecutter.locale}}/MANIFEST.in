@@ -1,2 +1,4 @@
-include *.txt
+recursive-include *.md
+recursive-include *.txt
 recursive-include jupyterlab_language_pack_{{ cookiecutter.locale }} *.json
+recursive-include jupyterlab_language_pack_{{ cookiecutter.locale }} *.mo
