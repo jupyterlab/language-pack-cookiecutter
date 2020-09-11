@@ -1,5 +1,4 @@
-{%- set loc_under = cookiecutter.locale.replace("-", "_") -%}
 recursive-include *.md
 recursive-include *.txt
-recursive-include jupyterlab_language_pack_{{ loc_under }} *.json
-recursive-include jupyterlab_language_pack_{{ loc_under }} *.mo
+recursive-include jupyterlab_language_pack_{{ cookiecutter.locale_underscore }} *.json
+recursive-include jupyterlab_language_pack_{{ cookiecutter.locale_underscore }} *.mo

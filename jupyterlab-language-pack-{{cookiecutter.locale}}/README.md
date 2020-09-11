@@ -1,4 +1,3 @@
-{%- set loc = cookiecutter.locale.replace("_", "-") -%}
 # Jupyterlab {{ cookiecutter.language }} Language Pack
 
 {{ cookiecutter.language }} language pack for the JupyterLab ecosystem.
@@ -8,13 +7,13 @@
 ### pip
 
 ```bash
-pip install jupyterlab-language-pack-{{ loc }}
+pip install jupyterlab-language-pack-{{ cookiecutter.locale }}
 ```
 
 ### conda
 
 ```bash
-conda install jupyterlab-language-pack-{{ loc }} -c conda-forge
+conda install jupyterlab-language-pack-{{ cookiecutter.locale }} -c conda-forge
 ```
 
 ## Contributing

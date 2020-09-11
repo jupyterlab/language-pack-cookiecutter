@@ -1,5 +1,3 @@
-{%- set loc = cookiecutter.locale.replace("_", "-") -%}
-{%- set loc_under = cookiecutter.locale.replace("-", "_") -%}
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
 
@@ -14,7 +12,7 @@ from setuptools import find_packages, setup
 HERE = os.path.abspath(os.path.dirname(__file__))
 
 
-def get_version(module="jupyterlab_language_pack_{{loc_under}}"):
+def get_version(module="jupyterlab_language_pack_{{cookiecutter.locale_underscore}}"):
     """Get version."""
     with open(os.path.join(HERE, module, "__init__.py"), "r") as f:
         data = f.read()
@@ -36,7 +34,7 @@ def get_description():
 
 
 setup(
-    name="jupyterlab-language-pack-{{loc}}",
+    name="jupyterlab-language-pack-{{cookiecutter.locale}}",
     version=get_version(),
     url="https://github.com/jupyterlab/language-packs",
     description="JupyterLab {{ cookiecutter.language }} Language Pack",
@@ -50,6 +48,6 @@ setup(
     packages=find_packages(exclude=["contrib", "docs", "tests*"]),
     include_package_data=True,
     entry_points={
-        "jupyterlab.languagepack": ["{{loc_under}} = jupyterlab_language_pack_{{loc_under}}"]
+        "jupyterlab.languagepack": ["{{cookiecutter.locale_underscore}} = jupyterlab_language_pack_{{cookiecutter.locale_underscore}}"]
     },
 )
