@@ -45,7 +45,7 @@ setup(
     author_email="jupyter@googlegroups.com",
     license="BSD-3-Clause",
     platforms="Linux, Mac OS X, Windows",
-    packages=find_packages(exclude=["contrib", "docs", "tests*"]),
+    packages=find_packages(),
     include_package_data=True,
     entry_points={
         "jupyterlab.languagepack": ["{{cookiecutter.locale_underscore}} = jupyterlab_language_pack_{{cookiecutter.locale_underscore}}"]
