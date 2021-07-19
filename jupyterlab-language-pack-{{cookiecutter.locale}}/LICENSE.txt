@@ -1,4 +1,4 @@
-Copyright (c) 2020 Project Jupyter Contributors
+Copyright (c) {% now 'utc', '%Y' %} Project Jupyter Contributors
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
