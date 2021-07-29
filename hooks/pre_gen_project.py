@@ -20,7 +20,8 @@ if "-" not in locale:
 try:
     babel_locale = Locale.parse(locale_underscore)
     parsed_locale = babel_locale.language + "_" + babel_locale.territory
-    if parsed_locale != locale_underscore:
+    # There is one exception for Norwegian
+    if parsed_locale != locale_underscore and (parsed_locale != 'nb_NO' or locale_underscore != 'no_NO'):
         print('ERROR: Locale "{0}" is invalid!'.format(locale))
         sys.exit(1)
 except Exception:
