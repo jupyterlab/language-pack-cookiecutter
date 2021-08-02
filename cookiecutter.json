@@ -1,5 +1,5 @@
 {
-    "locale": "",
-    "locale_underscore": "{{ cookiecutter.locale.replace(\"-\", \"_\") }}",
-    "language": ""
+  "locale": "",
+  "locale_underscore": "{{ cookiecutter.locale.replace(\"-\", \"_\") }}",
+  "language": ""
 }
