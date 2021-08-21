@@ -13,7 +13,7 @@ pip install jupyterlab-language-pack-{{ cookiecutter.locale }}
 ### conda
 
 ```bash
-conda install jupyterlab-language-pack-{{ cookiecutter.locale }} -c conda-forge
+conda install -c conda-forge jupyterlab-language-pack-{{ cookiecutter.locale }}
 ```
 
 ## Contributing
