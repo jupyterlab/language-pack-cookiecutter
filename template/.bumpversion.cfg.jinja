@@ -1,0 +1,12 @@
+[bumpversion]
+current_version = {{ version }}
+commit = False
+tag = False
+tag_name = {{ locale }}@v{new_version}
+parse = (?P<major>\d+)\.(?P<minor>\d+)\.post(?P<build>\d+)
+serialize = 
+	{major}.{minor}.post{build}
+
+[bumpversion:part:build]
+
+[bumpversion:file:jupyterlab_language_pack_{{ locale_underscore }}/__init__.py]
