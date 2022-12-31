@@ -1,6 +1,0 @@
-{
-  "locale": "",
-  "locale_underscore": "{{ cookiecutter.locale.replace(\"-\", \"_\") }}",
-  "language": "",
-  "version": "0.1.post0"
-}

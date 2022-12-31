@@ -1,8 +1,8 @@
 
 [metadata]
-name = jupyterlab-language-pack-{{cookiecutter.locale}}
-version = attr: jupyterlab_language_pack_{{cookiecutter.locale_underscore}}.__version__
-description = JupyterLab {{ cookiecutter.language }} Language Pack
+name = jupyterlab-language-pack-{{locale}}
+version = attr: jupyterlab_language_pack_{{locale_underscore}}.__version__
+description = JupyterLab {{ language }} Language Pack
 long_description = file: README.md
 long_description_content_type = text/markdown
 url = https://github.com/jupyterlab/language-packs
@@ -21,7 +21,7 @@ include_package_data = True
 
 [options.entry_points]
 jupyterlab.languagepack =
-    {{cookiecutter.locale_underscore}} = jupyterlab_language_pack_{{cookiecutter.locale_underscore}}
+    {{locale_underscore}} = jupyterlab_language_pack_{{locale_underscore}}
 
 [bdist_wheel]
 universal=1
