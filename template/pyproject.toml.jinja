@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling>=1.4.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = jupyterlab-language-pack-{{locale}}
+description = JupyterLab {{ language }} Language Pack
+authors = [
+    { name = "Project Jupyter Contributors", email = "jupyter@googlegroups.com" }
+]
+license = { file = "LICENSE.txt", text = "BSD-3-Clause" }
+readme = "README.md"
+classifiers = [
+    "Framework :: Jupyter",
+    "Framework :: Jupyter :: JupyterLab",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["jupyterlab", "language", "language pack", "localization"]
+dynamic = ["version"]
+
+[project.entry-points]
+jupyterlab.languagepack =
+    { {{locale_underscore}} = "jupyterlab_language_pack_{{locale_underscore}}" }
+
+[projects.urls]
+homepage = "https://github.com/jupyterlab/language-packs"
+
+[tool.hatch.build.targets.wheel]
+artifacts = [
+    "jupyterlab_language_pack_{{ locale_underscore }}/**/*.json",
+    "jupyterlab_language_pack_{{ locale_underscore }}/**/*.mo",
+]
+
+[tool.hatch.version]
+path = "jupyterlab_language_pack_{{locale_underscore}}/__init__.py"
