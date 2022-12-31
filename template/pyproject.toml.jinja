@@ -3,12 +3,12 @@ requires = ["hatchling>=1.4.0"]
 build-backend = "hatchling.build"
 
 [project]
-name = jupyterlab-language-pack-{{locale}}
-description = JupyterLab {{ language }} Language Pack
+name = "jupyterlab-language-pack-{{locale}}"
+description = "JupyterLab {{ language }} Language Pack"
 authors = [
     { name = "Project Jupyter Contributors", email = "jupyter@googlegroups.com" }
 ]
-license = { file = "LICENSE.txt", text = "BSD-3-Clause" }
+license = { file = "LICENSE.txt" }
 readme = "README.md"
 classifiers = [
     "Framework :: Jupyter",
@@ -20,17 +20,27 @@ classifiers = [
 keywords = ["jupyterlab", "language", "language pack", "localization"]
 dynamic = ["version"]
 
-[project.entry-points]
-jupyterlab.languagepack =
-    { {{locale_underscore}} = "jupyterlab_language_pack_{{locale_underscore}}" }
+[project.entry-points."jupyterlab.languagepack"]
+    {{locale_underscore}} = "jupyterlab_language_pack_{{locale_underscore}}"
 
 [projects.urls]
 homepage = "https://github.com/jupyterlab/language-packs"
+
+[tool.hatch.build]
+artifacts = [
+    "CONTRIBUTORS.md"
+]
+
+[tool.hatch.build.hooks.jupyter-translate]
+dependencies = ["jupyterlab-translate>=1.2.0"]
 
 [tool.hatch.build.targets.wheel]
 artifacts = [
     "jupyterlab_language_pack_{{ locale_underscore }}/**/*.json",
     "jupyterlab_language_pack_{{ locale_underscore }}/**/*.mo",
+]
+exclude = [
+    "jupyterlab_language_pack_{{ locale_underscore }}/**/*.po",
 ]
 
 [tool.hatch.version]
