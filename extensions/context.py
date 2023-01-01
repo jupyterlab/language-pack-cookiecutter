@@ -24,18 +24,19 @@ class ContextUpdater(ContextHook):
             )
             sys.exit(1)
 
-        locale_underscore = context["locale"].replace("-", "_")
+        locale = context["locale"]
+        # There is one exception for Norwegian
+        locale_underscore = ("nb-NO" if locale == "no-NO" else locale).replace("-", "_")
         try:
             babel_locale = Locale.parse(locale_underscore)
             parsed_locale = babel_locale.language + "_" + babel_locale.territory
-            # There is one exception for Norwegian
-            if parsed_locale != locale_underscore and (parsed_locale != 'nb_NO' or locale_underscore != 'no_NO'):
+            if parsed_locale != locale_underscore:
                 raise ValueError()
         except Exception:
             print("ERROR: Locale \"{0}\" is invalid!\n       See http://www.lingoes.net/en/translator/langcode.htm".format(locale))
             sys.exit(1)
 
         new_context = {}
-        # Create an helper variable
-        new_context["locale_underscore"] = locale_underscore
+        # Create helper variables
+        new_context["locale_underscore"] = locale.replace("-", "_")
         return new_context
